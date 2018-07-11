@@ -1,4 +1,4 @@
-a![Gemalto Logo](/images/logo-gemalto-340x120.gif)
+![Gemalto Logo](/images/logo-gemalto-340x120.gif)
 
 # Gemalto Authentication Solution
 Document version: 1.0 (July 2018)
