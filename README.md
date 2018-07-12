@@ -48,30 +48,36 @@ For a more realistic deployment, we recommend to use this flow. It uses the **"P
 
 
 ### Configure OAuth 2.0 node
-In the authentication tree, select the OAuth 2.0 node. A form tab will open on the right. The table below shows a typcial setup.
+In the authentication tree, select the OAuth 2.0 node. A form tab will open on the right. The information below shows a typcial setup.
 
-Properties | Values
----------- | -----------
-Node Name | ```Gemalto Auth``` (Any name can be chosen)
-Client ID | ```<See pre-requisites>```
-Client Secret | ```<See pre-requisites>```
-Authentication Endpoint URL | Copy value from the entry **authorization_endpoint** in the **OpenID Discovery URL** web page (see the pre-requisites)
-Access Token Endpoint URL | Copy value from the entry **token_endpoint** in the **OpenID Discovery URL** web page (see the pre-requisites)
-User Profile Service URL | Copy value from the entry **userinfo_endpoint** in the **OpenID Discovery URL** web page (see the pre-requisites)
-OAuth Scope	| ```openid profile email```
-Scope Delimiter | ``` ```  (enter the space character)
-Redirect URL | Access Management redirect URL. Example: https://openam.mybank.com/openam/XUI/
-Social Provider | ```Gemalto``` (Any name can be chosen)
-Auth ID Key | ```preferred_username```
-Use Basic Auth | ```enabled```
-Account Provider | ```org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider```
-Account Mapper | ```org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper```
-Attribute Mapper | ```org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper```
-Account Mapper Configuration | ```preferred_username=uid```
-Attribute Mapper Configuration | Enter the following entries:<br> ```given_name=givenName```<br> ```preferred_username=uid```<br> ```family_name=sn```<br> ```name=cn```<br> ```email=mail```<br>
-Save Attributes in the Session | ```enabled```
-OAuth 2.0 Mix-Up Mitigation Enabled	| ```disabled```
-Token Issuer | Copy value from the entry **issuer** in the **OpenID Discovery URL** web page (see the pre-requisites)
+* **Node Name** - ```Gemalto Auth``` (Any name can be chosen)
+* **Client ID** - ```<See pre-requisites>```
+* **Client Secret** - ```<See pre-requisites>```
+* **Authentication Endpoint URL** - Copy value from the entry **authorization_endpoint** in the **OpenID Discovery URL** web page (see the pre-requisites)
+* **Access Token Endpoint URL** - Copy value from the entry **token_endpoint** in the **OpenID Discovery URL** web page (see the pre-requisites)
+* **User Profile Service URL** - Copy value from the entry **userinfo_endpoint** in the **OpenID Discovery URL** web page (see the pre-requisites)
+* **OAuth Scope** - ```openid profile email```
+* **Scope Delimiter** - ``` ```  (enter the space character)
+* **Redirect URL** - Access Management redirect URL. Example: https://openam.mybank.com/openam/XUI/
+* **Social Provider** - ```Gemalto``` (Any name can be chosen)
+* **Auth ID Key** - ```preferred_username```
+* **Use Basic Auth** - ```enabled```
+* **Account Provider** - ```org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider```
+* **Account Mapper** - ```org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper```
+* **Attribute Mapper** - ```org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper```
+* **Account Mapper Configuration** - ```preferred_username=uid```
+* **Attribute Mapper Configuration** - Enter the following entries:<br> 
+  * ```given_name=givenName```
+  * ```preferred_username=uid```
+  * ```family_name=sn```
+  * ```name=cn```
+  * ```email=mail```
+* **Save Attributes in the Session** - ```enabled```
+* **OAuth 2.0 Mix-Up Mitigation Enabled** - ```disabled```
+* **Token Issuer** - Copy value from the entry **issuer** in the **OpenID Discovery URL** web page (see the pre-requisites)
+
+
+
 
 
 ## Testing your configuration
