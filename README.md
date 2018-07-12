@@ -1,7 +1,7 @@
 ![Gemalto Logo](/images/logo-gemalto-340x120.gif)
 
 # Gemalto Authentication Solution
-Document version: 1.0 (July 2018)
+Document version: 1.1 (July 2018)
 
 Gemalto Digital Banking Mobile Suite delivers strong multi-factor authentication – including biometrics – with best-in-class security, while fulfilling banking requirements. It ensures appropriate security features, while also allowing banks to comply with regulations and to offer simple, innovative experiences that increase the digital touchpoints in online channels. Gemalto Digital Banking Mobile Suite is developed and maintained by Gemalto with banking-grade security vetted by internal and external audits.
 
@@ -32,16 +32,16 @@ Access Management must be able to connect to Gemalto's solution.
 ## Create a new Authentication Tree
 
 ### Authentication Tree Diagram
-You can create many types of authentication tree to match your specific deployment. Below are 2 variants than can typically be used for simple setup. The integration of the Gemalto authentication solutions is done via the OAuth 2.0 node.
+You can create many types of authentication tree to match your specific deployment. Below are 2 variants than can typically be used for simple setups. The integration of the Gemalto authentication solutions is done via the OAuth 2.0 node.
 
 #### Quick Demo Setup
-For a **quick demo setup**, build this flow. It uses **"Provision Dynamic Account"**, that creates temporary accounts for logged in users. Those accounts are deleted once the session expires.
+For a **quick demo setup**, build this flow. It uses the **"Provision Dynamic Account"** node, that creates temporary accounts for logged in users. Those accounts are deleted once the session expires.
 
 
 ![Tree with temporary accounts](/images/tree-temporary.png)
 
 #### Persistent Accounts
-For a more realistic deployment, we recommend to use this flow. It uses **"Provision IDM Account"** to **permanently persist user accounts** in an IDM. An IDM needs to be configured in Access Management.
+For a more realistic deployment, we recommend to use this flow. It uses the **"Provision IDM Account"** node to **permanently persist user accounts** in an IDM. An IDM needs to be configured in Access Management.
 
 
 ![Tree with permanent accounts](/images/tree-permanent.png)
@@ -68,12 +68,7 @@ Account Provider | ```org.forgerock.openam.authentication.modules.common.mapping
 Account Mapper | ```org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper```
 Attribute Mapper | ```org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper```
 Account Mapper Configuration | ```preferred_username=uid```
-Attribute Mapper Configuration | Enter the following entries:
-Attribute Mapper Configuration | ```given_name=givenName```
-Attribute Mapper Configuration | ```preferred_username=uid```
-Attribute Mapper Configuration | ```family_name=sn```
-Attribute Mapper Configuration | ```name=cn```
-Attribute Mapper Configuration | ```email=mail```
+Attribute Mapper Configuration | Enter the following entries:<br> ```given_name=givenName```<br> ```preferred_username=uid```<br> ```family_name=sn```<br> ```name=cn```<br> ```email=mail```<br>
 Save Attributes in the Session | ```enabled```
 OAuth 2.0 Mix-Up Mitigation Enabled	| ```disabled```
 Token Issuer | Copy value from the entry **issuer** in the **OpenID Discovery URL** web page (see the pre-requisites)
