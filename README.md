@@ -1,4 +1,4 @@
-[Thales Logo](/images/logo-gemalto-340x120.gif)
+[Thales Logo](/images/Thales_Gemalto_logo.jpg)
 
 # Thales Digital Banking IdCloud Nodes
 Document version: 2.0 (November 2019)
@@ -92,21 +92,28 @@ To be allowed to connect to IdCloud, either for a POC, pilot or production, plea
 Below are several examples of how the nodes can be used to build simple or complex trees.
 
 **Mobile enrolment**
+
 The user is able to enrol his or her mobile after authenticating using a existing authentication method, like username password.
 
 ![Mobile enrolment](/images/idcloudenroll.png)
 
+
 **Out of band authentication**
+
 When the user tries to access the bank's web portal, he or she enters the username. A notification is sent to his or her mobile device to confirm the login request by entering his or her PIN or using any biometric factor like FaceID, TouchID, and so on. This generates an OTP that is verified by IdCloud. If the complete process is successful, "success" is returned.
 
 ![Out of band authentication](/images/idcloudauth.png)
 
+
 **Out of band transaction signature**
+
 The user requests a banking transfer that requires a signature. A notification is sent to his or her mobile device to confirm the transaction details. The user signs the transaction by entering his or her PIN or using any biometric factor like FaceID, TouchID, and so on. This generates an OTP linked to the transaction details (PSD2 dynamic linking) that is verified by IdCloud. If the complete process is successful, "success" is returned.
 
 ![Out of band transaction signature](/images/idcloudsign.png)
 
+
 **On boarding a new user**
+
 The user is asked to enter a scan of an ID document and take a selfie. IdCloud verifies the validity of the ID document, verifies the user is the owner of the ID document, and performs any other additional check like AML checks. If successful, a new account is created in the ForgeRock identity platform and the mobile is enrolled so he or she can authenticate or sign transactions in the future.
 
 ![On boarding a new user](/images/idcloudkycenroll.png)
