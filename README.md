@@ -1,4 +1,4 @@
-[Thales Logo](/images/Thales_Gemalto_logo.jpg)
+[Thales Logo](/images/logo-gemalto-340x120.gif)
 
 # Thales Digital Banking IdCloud Nodes
 Document version: 2.0 (November 2019)
@@ -28,19 +28,19 @@ This guide is targeting Access Management (AM) 6.5 and above. Please view ForgeR
 Access Management must be able to connect to IdCloud solution.
 
 
-** Step 1 - Requesting an IdCloud account **
+**Step 1 - Requesting an IdCloud account**
 To start testing this ForgeRock integration, you will need an account in IdCloud. Please contact a Thales Digital Banking sales representative to obtain it. You will be provided with the nodes, an IdCloud account and a sample application to help you quickly build a working proof-of-concept (POC). You will also have access to a developer portal with more information on our solution.
 
-** Step 2 - Install nodes **
+**Step 2 - Install nodes**
 1. Copy the jar file with the IdCloud nodes to your Access Management installation Example: <webserver>/openam/WEB-INF/lib/.
 1. Restart Access Management web server.
 
-** Step 3 - Add the IdCloud Service **
+**Step 3 - Add the IdCloud Service**
 1. In Access Management console, access the Service panel.
 1. Click Add Service and select "IdCloud Service" from the drop down list.
 1. Configure the new service using the information found below in the "IdCloud Service" section.
 
-** Step 4 - Create trees in Access Management **
+**Step 4 - Create trees in Access Management**
 The new nodes are available in the Intelligent Authentication UI. They are all prefixed by "IdCloud" and can be easily found in the left panel. You can now start including IdCloud nodes in new or existing trees.
 
 You can use the examples shown below for several typical use of the nodes.
@@ -91,22 +91,22 @@ To be allowed to connect to IdCloud, either for a POC, pilot or production, plea
 
 Below are several examples of how the nodes can be used to build simple or complex trees.
 
-** Mobile enrolment **
+**Mobile enrolment**
 The user is able to enrol his or her mobile after authenticating using a existing authentication method, like username password.
 
 ![Mobile enrolment](/images/idcloudenroll.png)
 
-** Out of band authentication **
+**Out of band authentication**
 When the user tries to access the bank's web portal, he or she enters the username. A notification is sent to his or her mobile device to confirm the login request by entering his or her PIN or using any biometric factor like FaceID, TouchID, and so on. This generates an OTP that is verified by IdCloud. If the complete process is successful, "success" is returned.
 
 ![Out of band authentication](/images/idcloudauth.png)
 
-** Out of band transaction signature **
+**Out of band transaction signature**
 The user requests a banking transfer that requires a signature. A notification is sent to his or her mobile device to confirm the transaction details. The user signs the transaction by entering his or her PIN or using any biometric factor like FaceID, TouchID, and so on. This generates an OTP linked to the transaction details (PSD2 dynamic linking) that is verified by IdCloud. If the complete process is successful, "success" is returned.
 
 ![Out of band transaction signature](/images/idcloudsign.png)
 
-** On boarding a new user **
+**On boarding a new user**
 The user is asked to enter a scan of an ID document and take a selfie. IdCloud verifies the validity of the ID document, verifies the user is the owner of the ID document, and performs any other additional check like AML checks. If successful, a new account is created in the ForgeRock identity platform and the mobile is enrolled so he or she can authenticate or sign transactions in the future.
 
 ![On boarding a new user](/images/idcloudkycenroll.png)
