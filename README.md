@@ -1,4 +1,4 @@
-[Thales Logo](/images/thales_gemalto_logo.jpg)
+![Thales Logo](/images/thales_gemalto_logo.jpg)
 
 # Thales Digital Banking IdCloud Nodes
 Document version: 2.0 (November 2019)
